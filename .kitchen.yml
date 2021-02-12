@@ -1,0 +1,40 @@
+---
+driver:
+  name: azurerm
+  subscription_id: "87afa202-e97d-406f-bdc5-c967fdd926d0"
+  location: "eastus"
+  machine_size: "Standard_D1"
+  explicit_resource_group_name: "packer-tmp"
+  destroy_explicit_resource_group: false
+  destroy_resource_group_contents: true
+
+transport:
+  ssh_key: ~/.ssh/id_kitchen-azurerm
+  connection_retry_sleep: 10
+  connection_retries: 10
+
+provisioner:
+  ## required options
+  name: ansible_push
+  playbook: provisioner/default.yml
+  idempotency_test: true
+  chef_bootstrap_url: nil
+  verbose: "v"
+
+verifier:
+  name: inspec
+  reporter:
+    - cli
+
+platforms:
+  - name: myimage
+    driver:
+      image_urn: <%= ENV['IMAGE_URN'] %>
+      vm_name: trusty-vm
+      resource_group_name: "packer-tmp"
+      explicit_resource_group_name: "packer-tmp"
+      destroy_explicit_resource_group: false
+      destroy_resource_group_contents: true
+
+suites:
+  - name: default

@@ -1,0 +1,10 @@
+---
+- name: This is a hello-world example
+  hosts: all
+  vars:
+    ansible_python_interpreter: "/usr/bin/python3"
+  tasks:
+    - name: Create a file called '/tmp/testfile.txt' with the content 'hello world'.
+      copy:
+        src: ./default.yml
+        dest: /tmp/testfile.txt
