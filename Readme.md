@@ -1,24 +1,26 @@
 # Base Image for E-Commerce
 
+## Support Ubuntu version
 
-## Accounts 
-
-* Disable root account `sudo passwd -l root`
-
-## SSH
-* Disallow password login for all users
-* After 5 attempts multiple failure users
-* No root ssh
-
-## Rootkits
-* install rk hunter
-
-## Security patches
-* All security related packages are installed
-
-## Support list of ubuntu 
 * 18.04
 * 20.04
 
-## Deny list
-* check if following applications are installed cups
+## Accounts 
+
+* Disable root account login 
+* Lock account after 3 failed attempts (https://linux-audit.com/locking-users-after-failed-login-attempts-with-pam_tally2/)
+
+## Only the following specific ports should be listening
+* 22 on 0.0.0.0
+* 53 on 127.0.1
+
+## Check if required packages are installed
+
+* zfs
+* az-cli
+* Auditd
+
+## Security 
+
+* No Security pending patches (apt list --upgradable | grep "\-security")
+* unattended security update package is not installed
