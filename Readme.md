@@ -2,15 +2,15 @@
 
 ## Image Requirments
 
-** Support Ubuntu version **
+**Support Ubuntu version**
 - Only support ubuntu
 - 18.04
 - 20.04
 
-** Accounts **
+**Accounts**
 - Disable root account login 
 
-** Image file version exists with content **
+**Image file version exists with content**
 - /var/goldenimage_version.txt exists
 - with the following content
 ```
@@ -18,16 +18,16 @@ version: GITHASH
 date: TIMESTAMP
 ```
 
-** Check if required packages are installed **
+**Check if required packages are installed**
 - zfs
 - az-cli
 - Auditd
 
-** Security **
+**Security**
 - No Security pending patches `apt list --upgradable | grep "\-security"`
 - unattended security update package is not installed
 
-** Only the following specific ports should be listenin **
+**Only the following specific ports should be listenin**
 - 22 on 0.0.0.0
 - 53 on 127.0.1
 
