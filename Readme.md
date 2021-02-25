@@ -19,9 +19,8 @@ date: TIMESTAMP
 ```
 
 **Check if required packages are installed**
-- zfs
-- az-cli
-- Auditd
+- azure-cli
+- auditd
 
 **Security**
 - No Security pending patches `apt list --upgradable | grep "\-security"`
@@ -33,10 +32,10 @@ date: TIMESTAMP
 
 ## Tools under the hood
 
-- test-kitchen: Test Kitchen is an integration tool for developing and testing infrastructure code and software on isolated target platforms. https://kitchen.ci/
-- inspec: A testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements. https://community.chef.io/tools/chef-inspec/
-- Ansible: Simple, agentless IT automation tool https://www.ansible.com/
-- Packer: Packer automates the creation of any type of machine image https://www.packer.io/
+- *test-kitchen* is an integration tool for developing and testing infrastructure code and software on isolated target platforms. https://kitchen.ci/
+- *inspec* a testing framework for infrastructure with a human- and machine-readable language for specifying compliance, security and policy requirements. https://community.chef.io/tools/chef-inspec/
+- *Ansible* a simple, agentless IT automation tool https://www.ansible.com/
+- *Packer* automates the creation of any type of machine image https://www.packer.io/
 
 ## Dev Environment
 

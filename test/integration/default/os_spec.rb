@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
-describe os.name do
-  it { should eq 'ubuntu' }
+control 'OS' do
+  impact 1.0
+  title 'Compatible OS'
+
+  describe os.name do
+    it { should eq 'ubuntu' }
+  end
+
 end
 
-describe os.release do
-  it { should be_in ['20.04', '18.04'] }
-end

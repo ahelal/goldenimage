@@ -11,6 +11,7 @@ help(){
     echo "  destroy"
     echo "  converage"
     echo "  verify"
+    echo "  login"
     echo "  image-build"
 }
 
@@ -32,6 +33,9 @@ elif [ "${CMD}" = "converage" ]; then
 elif [ "${CMD}" = "verify" ]; then
     cd "${DIR}/.."
     bundle exec kitchen verify
+elif [ "${CMD}" = "login" ]; then
+    cd "${DIR}/.."
+    bundle exec kitchen login
 elif [ "${CMD}" = "image-build" ]; then
     cd "${DIR}/.."
     BRANCH=$(git rev-parse --abbrev-ref HEAD)

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-describe user('root') do
-  it { should exist }
-  its('shell') { should eq '/bin/nologin' }
+control 'Users' do
+    impact 1.0
+    title 'Users config'
+
 end
