@@ -1,5 +1,9 @@
 # Base Image
 
+## Warning 
+
+The default image is used by test-kitchen is intentially old and has some security issues.
+
 ## Image Requirments
 
 **Support Ubuntu version**
